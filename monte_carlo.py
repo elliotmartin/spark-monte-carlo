@@ -7,7 +7,7 @@ from pyspark.context import SparkContext
 def run_sim(data, function, n):
     sc = SparkContext()
 
-    input_data = sc.parallelize([data()] * n)
+    input_data = sc.parallelize([data() for _ in range(n)])
     transformed_data = input_data.map(lambda x: function(x))
     kvp_data = transformed_data.map(lambda x: (x, 1))
     
