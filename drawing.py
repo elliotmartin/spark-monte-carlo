@@ -2,6 +2,7 @@ import random
 from copy import deepcopy
 import monte_carlo
 
+#inspired by https://twitter.com/Monsanto_HS/status/1265277979590041600
 def generate_deck():
     deck = ["x"] * 29
     deck.append("m")
