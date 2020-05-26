@@ -14,7 +14,10 @@ def run_sim(data, function, n):
     counts = kvp_data.reduceByKey(lambda a, b: a+b)
     counts = counts.collectAsMap()
     
-    num_true = counts[True]
+    try:
+        num_true = counts[True]
+    except:
+        num_true = 0
     num_false = counts[False]
     
     return num_true/n
