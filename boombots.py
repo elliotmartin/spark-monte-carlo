@@ -3,9 +3,13 @@ import random
 
 #inspired by https://twitter.com/TicTac_HS/status/1266774348398047232
 def generate_data():
+    if random.randint(0,99) < 3:
+        bots_popped = 5
+    else:
+        bots_popped = 6
     dmg_face = 0
     dmg_dw = 0
-    for i in range(6):
+    for i in range(bots_popped):
         dmg = random.randint(1,4)
         to_dmg = random.choice(['dw', 'face'])
         if to_dmg == "dw":
